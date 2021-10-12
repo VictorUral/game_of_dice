@@ -25,7 +25,7 @@ def players_moves (check_player):
 			rand_num = randint (1, 6) # возвращает случайное число от 1 до 6 (имитация броска кубика)
 			if rand_num == 1:
 				print (f'Выпала {rand_num}. Вы пропускаете ход, а заработанные очки згарают.')
-				current_account = 0 # заработанные очки за ход згарают
+				current_account = 0 # заработанные очки за ход вычитаються (згарают) от основного счёта
 				break
 			else:
 				print (f'Выпало: {rand_num}')
@@ -130,7 +130,7 @@ def players_points (players_list):
 	for x in players_list:
 		points_list[x] = 0
 	return points_list
-	
+
 while True:
 	question_num_players = int(input ('Введите количество игрков: '))
 	if question_num_players == 1:
@@ -179,4 +179,6 @@ while True:
 				index_current_player += 1 # то прибавляем еденицу и ход переходит к следующему игроку в списке
 		break
 	else:
-		print ('Такого варинта нет.')		
+		print ('Такого варинта нет.')
+		
+		
